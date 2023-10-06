@@ -1,0 +1,23 @@
+body {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    margin-top: 20%;
+    width: 480px;
+    height: 480px;
+    display: flex;
+    flex-wrap: wrap;
+    outline: 3px solid black;
+}
+
+.container div {
+    width: 15px;
+    height: 15px;
+    border: none;
+    outline: 1px solid rgba(0, 0, 0, 0.069);
+}
