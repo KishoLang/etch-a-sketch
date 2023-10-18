@@ -7,7 +7,7 @@ body {
     justify-content: center;
     align-items: center;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
-    background-color: lightblue;
+    background-color: #69daf3;
 }
 
 header {
@@ -20,9 +20,9 @@ header {
     text-transform: uppercase;
     color: #fff;
     text-shadow:
-                 -3px 4px #f9a825,
-                 -6px 8px #ff5722,
-                 -9px 12px rgb(177, 54, 177);
+                 -3px 4px #ff00ff,
+                 -6px 8px #a300e8,
+                 -9px 12px #7000d9;
   
 }
 
@@ -52,6 +52,7 @@ header {
 
 .edit-container > * {
     margin: 0 20px;
+    padding: 3px;
 }
 
 #clear {
@@ -71,16 +72,16 @@ header {
 }
 
 #eraser:hover {
-    animation: rotate-eraser 500ms forwards;
+    animation: rotate 500ms forwards;
 }
 
 #pen {
-    width: 35px;
-    rotate: 20deg;
+    width: 75px;
+    rotate: -35deg;
 }
 
 #pen:hover {
-    animation: rotate-pen 500ms forwards;
+    animation: rotate 500ms forwards;
 }
 
 @keyframes squish-trash {
@@ -95,21 +96,12 @@ header {
     }
 }
 
-@keyframes rotate-eraser {
+@keyframes rotate {
     0% {
         rotate: -35deg;
     }
     100% {
         rotate: 0deg;
-    }
-}
-
-@keyframes rotate-pen {
-    0% {
-        rotate: 20deg;
-    }
-    100% {
-        rotate: 60deg;
     }
 }
 

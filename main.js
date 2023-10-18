@@ -29,7 +29,7 @@ for (let i = 0; i < gridItems.length; i++) {
         if (mousedown && !eraserOn) { 
             gridItems[i].style.backgroundColor = color;
         }
-        if (eraserOn) {
+        if (mousedown && eraserOn) {
             gridItems[i].style.backgroundColor = "transparent";
         }
     });
@@ -59,10 +59,26 @@ colorPicker.addEventListener("change", () => {
 
 eraser.addEventListener("click", () => {
     eraserOn = true;
+    // Set Style around eraser
+    eraser.style.border = "2px dotted white";
+    eraser.style.borderRadius = "12px";
+    eraser.style.rotate = "0deg";
+    // Unset Style around pen
+    pen.style.border = "";
+    pen.style.borderRadius = "";
+    pen.style.rotate = "";
 });
 
 pen.addEventListener("click", () => {
     eraserOn = false;
+    // Unset Style around eraser
+    eraser.style.border = "";
+    eraser.style.borderRadius = "";
+    eraser.style.rotate = "";
+    // Set Style around pen
+    pen.style.border = "2px dotted white";
+    pen.style.borderRadius = "12px";
+    pen.style.rotate = "0deg";
 });
 
 
