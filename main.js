@@ -62,11 +62,13 @@ eraser.addEventListener("click", () => {
     // Set Style around eraser
     eraser.style.border = "2px dotted white";
     eraser.style.borderRadius = "12px";
+    eraser.style.margin = "18px -2px 18px -2px";
     eraser.style.rotate = "0deg";
     // Unset Style around pen
     pen.style.border = "";
     pen.style.borderRadius = "";
     pen.style.rotate = "";
+    pen.style.margin = "20px 0px";
 });
 
 pen.addEventListener("click", () => {
@@ -75,10 +77,12 @@ pen.addEventListener("click", () => {
     eraser.style.border = "";
     eraser.style.borderRadius = "";
     eraser.style.rotate = "";
+    eraser.style.margin = "20px 0px";
     // Set Style around pen
     pen.style.border = "2px dotted white";
     pen.style.borderRadius = "12px";
     pen.style.rotate = "0deg";
+    pen.style.margin = "18px -2px 18px -2px";
 });
 
 
