@@ -6,11 +6,12 @@
     <link rel="icon" type="image/ico" href="images/SketchApp.ico">
     <title>Etch A Sketch</title>
     <link rel="stylesheet" href="styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/dom-to-image/2.6.0/dom-to-image.min.js" integrity="sha512-01CJ9/g7e8cUmY0DFTMcUw/ikS799FHiOA0eyHsUWfOetgbx/t6oV4otQ5zXKQyIrQGTHSmRVPIgrgLcZi/WMA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 </head>
 <body>
     <header>Sketch Pad</header>
     <div class="content-container">
-        <div class="container"> </div>
+        <div id="canvas" class="container"> </div>
         <div class="edit-container">
             <img src="images/Trashcan.png" alt="image of a trashcan" id="clear">
             <img id="eraser" src="images/Eraser.png" alt="image of an eraser">
@@ -19,6 +20,6 @@
         </div>
     </div>
     <div id="footer"><span id="footer-text">Copyright © 2023 kisholang <a href="https://github.com/kisholang"><i class="fa fa-github" aria-hidden="true"></i></a></span></div>
-    <script src="main.js"></script>
+    <script type="module" src="main.js"></script>
 </body>
 </html>

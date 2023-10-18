@@ -4,6 +4,8 @@ const gridContainer = document.querySelector(".container");
 createGrid(32);
 // Grab reference to gridItems
 const gridItems = document.querySelectorAll(".grid-item");
+// Grab reference to download button
+const downloadBtn = document.getElementById("download-btn");
 // Grab reference to clear button
 const clearBtn = document.getElementById("clear");
 // Grab reference to color picker input and eraser
@@ -50,13 +52,12 @@ clearBtn.addEventListener("click", () => {
     }
 })
 
-
 // Select color
 colorPicker.addEventListener("change", () => {
     console.log(colorPicker.value)
     color = colorPicker.value;
 });
-
+// Select Erase 
 eraser.addEventListener("click", () => {
     eraserOn = true;
     // Set Style around eraser
@@ -70,7 +71,7 @@ eraser.addEventListener("click", () => {
     pen.style.rotate = "";
     pen.style.margin = "20px 0px";
 });
-
+// Select Pen
 pen.addEventListener("click", () => {
     eraserOn = false;
     // Unset Style around eraser
