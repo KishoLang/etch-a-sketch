@@ -31,16 +31,6 @@ header {
   
 }
 
-
-#clear {
-    background-color: #ff5722;
-    border-radius: 5px;
-    width: 100px;
-    height: 30px;
-    font-size: 15px;
-    color: rgba(0, 0, 0, 0.507);
-}
-
 .container {
     margin-top: 5vh;
     margin-bottom: 20px;
@@ -57,6 +47,75 @@ header {
     height: 15px;
     border: none;
     outline: 1px solid rgba(0, 0, 0, 0.069);
+}
+
+.edit-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.edit-container > * {
+    margin: 0 20px;
+}
+
+#clear {
+    border-radius: 5px;
+    width: 50px;
+    height: auto;
+}
+
+#clear:hover {
+    animation: squish-trash 1s forwards;
+}
+
+#eraser {
+    width: 70px;
+    height: auto;
+    rotate: -35deg;
+}
+
+#eraser:hover {
+    animation: rotate-eraser 500ms forwards;
+}
+
+#pen {
+    width: 35px;
+    rotate: 20deg;
+}
+
+#pen:hover {
+    animation: rotate-pen 500ms forwards;
+}
+
+@keyframes squish-trash {
+    0% {
+        transform: scale3d(1, 1, 1);
+    }
+    50% {
+        transform: scale3d(1.5, 0.3, 1);
+    }
+    100% {
+        transform: scale3d(1, 1, 1);
+    }
+}
+
+@keyframes rotate-eraser {
+    0% {
+        rotate: -35deg;
+    }
+    100% {
+        rotate: 0deg;
+    }
+}
+
+@keyframes rotate-pen {
+    0% {
+        rotate: 20deg;
+    }
+    100% {
+        rotate: 60deg;
+    }
 }
 
 #footer {

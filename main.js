@@ -6,33 +6,41 @@ createGrid(32);
 const gridItems = document.querySelectorAll(".grid-item");
 // Grab reference to clear button
 const clearBtn = document.getElementById("clear");
-// Grab reference to color picker input
+// Grab reference to color picker input and eraser
 const colorPicker = document.getElementById("color-pick");
+const eraser = document.getElementById("eraser");
+const pen = document.getElementById("pen");
 let color = "black";
+let eraserOn = false;
 
 // Check if mousedown
 let mousedown;
 document.body.onmousedown = function() {
     mousedown = true;
-    console.log(mousedown);
 }
 document.body.onmouseup = function() {
     mousedown = false;
-    console.log(mousedown);
 }
 
 // Check for events for coloring a gridItem
 for (let i = 0; i < gridItems.length; i++) {
     // Event listener for mousedown + hover
     gridItems[i].addEventListener("mouseover", () => {
-        if (mousedown) { 
-            console.log("HELLO");
+        if (mousedown && !eraserOn) { 
             gridItems[i].style.backgroundColor = color;
-        };
+        }
+        if (eraserOn) {
+            gridItems[i].style.backgroundColor = "transparent";
+        }
     });
     // Event listener for only mousedown
     gridItems[i].addEventListener("mousedown", () => {
-        gridItems[i].style.backgroundColor = color;
+        if (!eraserOn) {
+            gridItems[i].style.backgroundColor = color;
+        }
+        if (eraserOn) {
+            gridItems[i].style.backgroundColor = "transparent";
+        }
     })
 }
 
@@ -47,6 +55,14 @@ clearBtn.addEventListener("click", () => {
 colorPicker.addEventListener("change", () => {
     console.log(colorPicker.value)
     color = colorPicker.value;
+});
+
+eraser.addEventListener("click", () => {
+    eraserOn = true;
+});
+
+pen.addEventListener("click", () => {
+    eraserOn = false;
 });
 
 
