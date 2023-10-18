@@ -6,6 +6,9 @@ createGrid(32);
 const gridItems = document.querySelectorAll(".grid-item");
 // Grab reference to clear button
 const clearBtn = document.getElementById("clear");
+// Grab reference to color picker input
+const colorPicker = document.getElementById("color-pick");
+let color = "black";
 
 // Check if mousedown
 let mousedown;
@@ -24,12 +27,12 @@ for (let i = 0; i < gridItems.length; i++) {
     gridItems[i].addEventListener("mouseover", () => {
         if (mousedown) { 
             console.log("HELLO");
-            gridItems[i].style.backgroundColor = "black";
+            gridItems[i].style.backgroundColor = color;
         };
     });
     // Event listener for only mousedown
     gridItems[i].addEventListener("mousedown", () => {
-        gridItems[i].style.backgroundColor = "black";
+        gridItems[i].style.backgroundColor = color;
     })
 }
 
@@ -39,6 +42,12 @@ clearBtn.addEventListener("click", () => {
     }
 })
 
+
+// Select color
+colorPicker.addEventListener("change", () => {
+    console.log(colorPicker.value)
+    color = colorPicker.value;
+});
 
 
 function createGrid(gridSize) {
